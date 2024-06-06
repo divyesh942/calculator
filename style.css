@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Digital7';
+    src: url('/Digital7-rg1mL.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.outer-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+}
+
+.inner-main {
+    width: 300px;
+    height: auto; /* Allow the height to adjust based on content */
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 5px 10px 10px 0px rgba(0, 0, 0, 0.79);
+}
+
+.inner-main .display {
+    background-color: rgba(115, 122, 80, 0.75);
+    font-family: 'Digital7', sans-serif;
+    font-weight: bold;
+    color: black;
+    font-size: 2.7em;
+    padding: 5px 10px;
+    word-break: break-word;
+    margin-bottom: 10px;
+    white-space: normal; /* Allow text to wrap */
+    overflow-wrap: break-word; /* Ensure words break to fit */
+    height: auto; /* Allow height to adjust */
+    min-height: 13vh; /* Minimum height to maintain initial size */
+    max-height: 26vh; /* Maximum height to prevent excessive growth */
+    transition: height 0.3s ease-in-out; /* Smooth transition for height changes */
+}
+
+.inner-main .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Adjust the gap between buttons */
+}
+
+.inner-main .buttons button {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    width: calc(25% - 5px); /* Adjust width for equal spacing */
+    height: 60px;
+    border: none;
+    background: #636e72;
+    font-family: Share Tech Mono, monospace;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out; /* Add transition for hover effects */
+}
+
+.inner-main .buttons button:active {
+    animation: clickAnimation 0.2s ease-in; /* Smooth animation */
+}
+
+.inner-main .buttons button:hover {
+    color: #f5f6fa; /* Softer white */
+    border: 2px solid #f5f6fa; /* Softer white */
+    background: #2d3436; /* Darker gray */
+}
+
+@keyframes clickAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+.inner-main .buttons .zero {
+    width: calc(50% - 5px); /* Adjust width to maintain the grid structure */
+}
+
+.inner-main .buttons .equal {
+    background: #8e44ad;
+}
+
+.inner-main .buttons .operation-button {
+    background: #4a69bd;
+}
